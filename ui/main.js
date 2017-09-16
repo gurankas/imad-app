@@ -7,5 +7,5 @@ element.innerHTML = '<body><p>This is the text which was changed via javascript<
 //Move the image after it's loaded
 var image = document.getElementById('logo');
 image.onclick = function(){
-    image.style.leftMargin = '100px';  
+    image.style.marginLeft = '100px'; 
 };
