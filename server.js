@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = {
-    articleOne : {
+    'article-one' : {
         title:'Article One | Gurankas SIngh',
         heading:'Article One',
         date:'August 28, 2017',
@@ -20,7 +20,7 @@ var articles = {
                     Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
                 </p>`
     },
-    articleTwo : {
+    'article-two' : {
         title:'Article Two | Gurankas SIngh',
         heading:'Article Two',
         date:'September 16, 2017',
@@ -34,7 +34,7 @@ var articles = {
                     Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
                 </p>`
     },
-    articleThree : {
+    'article-three' : {
         title:'Article Three | Gurankas SIngh',
         heading:'Article Three',
         date:'September 17, 2017',
@@ -88,8 +88,9 @@ app.get('/', function (req, res) {
   res.send(createTemplate(articles.articleOne));
 });
 
-app.get('/article-one', function(req,res)
+app.get('/:articleName', function(req,res)
 {
+    var articleName = req.params.articleName;   
    res.send(createTemplate(articles.articleOne));
 });
 
