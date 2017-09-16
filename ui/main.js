@@ -8,10 +8,10 @@ element.innerHTML = '<body><p>This is the text which was changed via javascript<
 var image = document.getElementById('logo');
 var marginLeft = 0;
 image.onclick = function(){
-  var interval = setInterval(moveRight, 100);
+  var interval = setInterval(moveRight, 50);
 };
 
 function moveRight(){
-marginLeft = marginLeft +10;
+marginLeft = marginLeft +5;
 image.style.marginLeft = marginLeft + 'px';
 }
