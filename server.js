@@ -5,20 +5,50 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title:'Article One | Gurankas SIngh',
-    heading:'Article One',
-    date:'August 28, 2017',
-    content:`<p>
-                Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
-            </p>
-            <p>
-                Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
-            </p>
-            <p>
-                Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
-            </p>`
-}
+var articles = {
+    articleOne : {
+        title:'Article One | Gurankas SIngh',
+        heading:'Article One',
+        date:'August 28, 2017',
+        content:`<p>
+                    Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
+                </p>
+                <p>
+                    Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
+                </p>
+                <p>
+                    Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
+                </p>`
+    },
+    articleTwo : {
+        title:'Article Two | Gurankas SIngh',
+        heading:'Article Two',
+        date:'September 16, 2017',
+        content:`<p>
+                    Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
+                </p>
+                <p>
+                    Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
+                </p>
+                <p>
+                    Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
+                </p>`
+    },
+    articleThree : {
+        title:'Article Three | Gurankas SIngh',
+        heading:'Article Three',
+        date:'September 17, 2017',
+        content:`<p>
+                    Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
+                </p>
+                <p>
+                    Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
+                </p>
+                <p>
+                    Well, this is the first time I am adding webpages to my application. Its good to be developing software. Feels like I am contributing to sciety in my own way and can give shape to creation in my mind.
+                </p>`
+    }
+};
 
 function createTemplate(data){
     var title = data.title;
@@ -55,7 +85,7 @@ return HTMLTemplate;
 }
 
 app.get('/', function (req, res) {
-  res.send(createTemplate(articleOne));
+  res.send(createTemplate(articles.articleOne));
 });
 
 app.get('/article-one', function(req,res)
