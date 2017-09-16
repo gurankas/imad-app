@@ -6,6 +6,12 @@ element.innerHTML = '<body><p>This is the text which was changed via javascript<
 
 //Move the image after it's loaded
 var image = document.getElementById('logo');
+var marginLeft = 0;
 image.onclick = function(){
-    image.style.marginLeft = '100px'; 
+  var interval = setInterval(moveRight, 100);
 };
+
+function moveRight(){
+marginLeft = marginLeft +10;
+image.style.marginLeft = marginLeft + 'px';
+}
