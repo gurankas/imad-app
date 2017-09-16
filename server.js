@@ -85,7 +85,7 @@ return HTMLTemplate;
 }
 
 app.get('/', function (req, res) {
-  res.send(createTemplate(articles.article-one));
+  res.send(createTemplate(articles[article-one]));
 });
 
 app.get('/:articleName', function(req,res)
